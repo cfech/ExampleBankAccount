@@ -1,5 +1,6 @@
 package com.classes;
 
+import java.net.Socket;
 import java.security.PublicKey;
 import java.util.Random;
 
@@ -11,6 +12,21 @@ public class Account {
     String email;
     String phoneNumber;
 
+    //Constructor example 1 - defaults
+    public Account(){
+        //only use of this in this manner, must be first line in a default constructor
+
+        this(123, "Test", "defualt email", "123-456-789");
+        System.out.println("Default constructor called");
+    }
+
+    //Constructor example 2 - some defaults , some input
+    public Account(String customerName, String email, String phoneNumber) {
+        //for only starting with a default balance
+        this(155, customerName, email, phoneNumber);
+    }
+
+    //example 3, all input
     public Account(double balance, String customerName, String email, String phoneNumber ){
         this.balance = balance;
         this.customerName = customerName;
