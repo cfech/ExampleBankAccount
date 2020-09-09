@@ -6,14 +6,14 @@ import java.util.Random;
 
 public class Account {
     Random rand = new Random();
-    long accountNumber = rand.nextInt(100000000);
-    double balance;
-    String customerName;
-    String email;
-    String phoneNumber;
+    private long accountNumber = rand.nextInt(100000000);
+    private double balance;
+    private String customerName;
+    private String email;
+    private String phoneNumber;
 
     //Constructor example 1 - defaults
-    public Account(){
+    public Account() {
         //only use of this in this manner, must be first line in a default constructor
 
         this(123, "Test", "defualt email", "123-456-789");
@@ -27,7 +27,7 @@ public class Account {
     }
 
     //example 3, all input
-    public Account(double balance, String customerName, String email, String phoneNumber ){
+    public Account(double balance, String customerName, String email, String phoneNumber) {
         this.balance = balance;
         this.customerName = customerName;
         this.email = email;
@@ -93,7 +93,7 @@ public class Account {
         }
     }
 
-    public void getCustomerInfo(){
+    public void getCustomerInfo() {
         System.out.println("Name = " + this.customerName);
         System.out.println("Email = " + this.email);
         System.out.println("Phone = " + this.phoneNumber);
