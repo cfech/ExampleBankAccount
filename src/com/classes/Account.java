@@ -1,16 +1,22 @@
 package com.classes;
 
+import java.security.PublicKey;
 import java.util.Random;
 
 public class Account {
     Random rand = new Random();
-
     long accountNumber = rand.nextInt(100000000);
-    double balance = 0;
+    double balance;
     String customerName;
     String email;
     String phoneNumber;
 
+    public Account(double balance, String customerName, String email, String phoneNumber ){
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 
     public long getAccountNumber() {
         return accountNumber;
@@ -69,7 +75,12 @@ public class Account {
         if (withdraw < 0) {
             System.out.println("Please enter a value > 0");
         }
+    }
 
-
+    public void getCustomerInfo(){
+        System.out.println("Name = " + this.customerName);
+        System.out.println("Email = " + this.email);
+        System.out.println("Phone = " + this.phoneNumber);
+        System.out.println("Account number = " + this.accountNumber);
     }
 }
